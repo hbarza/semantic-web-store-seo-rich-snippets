@@ -1,0 +1,63 @@
+<?php
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive, Design
+ * @package    Codnitive_SemanticStore
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+?>
+<?php if ($this->getReviewsCount()): ?>
+<?php 
+    // added by codnitive <<<
+    $_config = Mage::getModel('semanticstore/config');
+    // added by codnitive >>>
+?>
+    <?php // def: <div class="ratings"> ?>
+    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="ratings">
+        <?php if ($this->getRatingSummary()):?>
+            <div class="rating-box">
+                <div class="rating" style="width:<?php echo $this->getRatingSummary() ?>%"></div>
+                <?php // added by codnitive <<< ?>
+                <meta itemprop="bestRating" content="100"/>
+                <meta itemprop="ratingValue" content="<?php echo $this->getRatingSummary() ?>"/>
+                <meta itemprop="worstRating" content="20"/>
+                
+                <?php if ($_config->addProductRatingCount()): ?>
+                <meta itemprop="ratingCount" content="<?php echo $this->getReviewsCount() ?>"/>
+                <?php endif; ?>
+                
+                <?php if ($_config->addProductItemReviewed()): ?>
+                <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+                    <meta itemprop="name" content="<?php echo $this->getProduct()->getName() ?>"/>
+                    <link itemprop="url" href="<?php echo $this->getProduct()->getProductUrl() ?>" />
+                </span>
+                <?php endif; ?>
+                <?php // added by codnitive >>> ?>
+            </div>
+        <?php endif;?>
+        <p class="rating-links">
+            <?php /* def: <a href="<?php echo $this->getReviewsUrl() ?>"><?php echo $this->__('%d Review(s)', $this->getReviewsCount()) ?></a> */ ?>
+            <a href="<?php echo $this->getReviewsUrl() ?>"><span itemprop="reviewCount"><?php echo $this->getReviewsCount() ?></span> <?php echo $this->__('Review(s)') ?></a>
+            <span class="separator">|</span>
+            <a href="<?php echo $this->getReviewsUrl() ?>#review-form"><?php echo $this->__('Add Your Review') ?></a>
+        </p>
+    </div>
+<?php elseif ($this->getDisplayIfEmpty()): ?>
+    <p class="no-rating"><a href="<?php echo $this->getReviewsUrl() ?>#review-form"><?php echo $this->__('Be the first to review this product') ?></a></p>
+<?php endif; ?>

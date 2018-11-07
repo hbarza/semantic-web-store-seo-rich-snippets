@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_ExtensionName
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+
+<config>	
+    <sections>
+        <codnitivesemantic translate="label" module="semanticstore">
+            <label>Semantic Store, SEO Rich Snippets</label>
+            <tab>codall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <semanticstore translate="label, comment" module="semanticstore">
+                    <label>Base Settings</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <heading_activation translate="label">
+                            <label>Activation</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_activation>
+                        <sernum translate="label">
+                            <label>Serial Number</label>
+                            <frontend_type>obscure</frontend_type>
+<!--                            <validate>required-entry</validate>
+                            <backend_model>semanticstore/system_config_backend_encryptedserial</backend_model>-->
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sernum>
+                        <regcod translate="label">
+                            <label>Registration Code</label>
+                            <frontend_type>obscure</frontend_type>
+<!--                            <validate>required-entry</validate>
+                            <backend_model>semanticstore/system_config_backend_encryptedregcode</backend_model>-->
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </regcod>
+                        <ownnam translate="label">
+                            <label>Full Name</label>
+                            <frontend_type>text</frontend_type>
+<!--                            <validate>required-entry</validate>
+                            <backend_model>semanticstore/system_config_backend_name</backend_model>-->
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </ownnam>
+                        <ownmai translate="label">
+                            <label>Email Address</label>
+                            <frontend_type>text</frontend_type>
+<!--                            <validate>validate-email required-entry</validate>
+                            <backend_model>semanticstore/system_config_backend_email</backend_model>-->
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </ownmai>
+                        
+                        <heading_config translate="label">
+                            <label>Configuration</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_config>
+                        <active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <!--<backend_model>semanticstore/system_config_backend_cert</backend_model>-->
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+<!--                            <tooltip>This option affects to all Auto Meta Data settings (Products Meta Info, Products Media, Categories Meta Info and CMS Pages Meta Info).</tooltip>
+                            <comment>Note: Affects on all Auto Meta Data Settings</comment>-->
+                        </active>
+                        <markup_format translate="label,comment">
+                            <label>Markup Format</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>semanticstore/system_config_source_markupformat</source_model>
+                            <sort_order>41</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA["Microdata" introduced with HTML5, so is recommended.]]></comment>
+                        </markup_format>
+                        <microdata_adding_mode translate="label">
+                            <label>Markup Adding Mode</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>semanticstore/system_config_source_markupaddingmode</source_model>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <markup_format>microdata</markup_format>
+                            </depends>
+                            <tooltip><![CDATA[In "Standard Mode" maybe you need to modify template files based on your template if you have a custom one, but it's <strong>recommended</strong>.<br />
+If you don't want to modify your template files, you can use "Injection Mode", it adds all markup info by 'meta' and 'link' tags.]]></tooltip>
+                        </microdata_adding_mode>
+                    </fields>
+                </semanticstore>
+                
+                <semanticproduct translate="label, comment" module="semanticstore">
+                    <label>Semantic Products</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <active translate="label">
+                            <label>Enabled for Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <default_properties translate="label">
+                            <label>Default Properties</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>semanticstore/system_config_source_properties</source_model>
+                            <sort_order>41</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_properties>
+                        <description translate="label,comment,tooltip">
+                            <label>Add description prop to</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>semanticstore/system_config_source_productdescription</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Please note, this option affects when description is selected in Default Properties.]]></comment>
+                        </description>
+                        <productid_attribute translate="label,comment,tooltip">
+                            <label>Product ID Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>semanticstore/system_config_source_prodattributeslist</source_model>
+                            <sort_order>51</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Please note, this option affects when productID is selected in Default Properties.]]></comment>
+                            <tooltip><![CDATA[Please note, SKU is one of default properties, so don't need to select it again as product ID.]]></tooltip>
+                        </productid_attribute>
+                        <productid_attribute_add_label translate="label,comment">
+                            <label>Add Label to Product ID Attribute</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>52</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Addes attribute frontend label to productID content.<br />Yes: content='isbn:123-456-789'<br />No: content='123-456-789']]></comment>
+                        </productid_attribute_add_label>
+                        <product_weight_unitcode translate="label,comment,label">
+                            <label>Product Weight Unit Code</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[You must use UN/CEFACT Common Code (3 characters). Please read tooltip for more info.<br />Please note, this option affects when weight is selected in Default Properties.]]></comment>
+                            <tooltip><![CDATA[Some codes are:<br />gram: GRM, kilogram: KGM, milligram: MGM<br />You can find more codes here: http://www.unece.org.unecedev.colo.iway.ch/fileadmin/DAM/cefact/recommendations/add3a.htm]]></tooltip>
+                        </product_weight_unitcode>
+                        
+                        <heading_offers translate="label">
+                            <label>Prices and Offers</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_offers>
+                        <offers_active translate="label,comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>501</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Offers use for product price.]]></comment>
+                        </offers_active>
+                        <add_price_currency translate="label,tooltip">
+                            <label>Add priceCurrency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>510</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <tooltip><![CDATA[Affects if Prices and Offers is enabled.]]></tooltip>
+                        </add_price_currency>
+                        <use_store_currency translate="label,comment,tooltip">
+                            <label>Use Store Currency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>511</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <add_price_currency>1</add_price_currency>
+                            </depends>
+                            <comment><![CDATA[It's highly recommended set this option into Yes.]]></comment>
+                            <tooltip><![CDATA[Yes: Adds store currency code to priceCurrency<br />No: Adds base currency code to priceCurrency]]></tooltip>
+                        </use_store_currency>
+                        <currency_factor translate="label,tooltip,comment">
+                            <label>Currency Coefficient</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>validate-number</validate>
+                            <sort_order>520</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends>
+                                <add_price_currency>1</add_price_currency>
+                            </depends>
+                            <tooltip><![CDATA[Add coefficient to show correct price in case you need it.]]></tooltip>
+                            <comment><![CDATA[Use zero or leave empty to disable it.]]></comment>
+                        </currency_factor>
+                        <add_availibility translate="label,tooltip">
+                            <label>Add availability</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>530</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <tooltip><![CDATA[Affects if Prices and Offers is enabled.]]></tooltip>
+                        </add_availibility>
+                        
+                        <heading_rating translate="label">
+                            <label>Product Aggregate Rating</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </heading_rating>
+                        <rating_active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>610</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </rating_active>
+                        <add_rating_count translate="label,tooltip">
+                            <label>Add ratingCount</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>620</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <tooltip><![CDATA[Affects if Aggregate Rating is enabled.]]></tooltip>
+                        </add_rating_count>
+                        <add_item_reviewed translate="label,tooltip">
+                            <label>Add itemReviewed</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>630</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <tooltip><![CDATA[Affects if Aggregate Rating is enabled.]]></tooltip>
+                        </add_item_reviewed>
+                    </fields>
+                </semanticproduct>
+            </groups>
+        </codnitivesemantic>
+    </sections>
+</config>

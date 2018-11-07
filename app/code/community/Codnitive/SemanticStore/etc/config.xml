@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_SemanticStore
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+
+<config>
+    <modules>
+        <Codnitive_SemanticStore>
+            <version>1.0.00</version>
+            <title>Semantic Store</title>
+            <link><![CDATA[http://www.codnitive.com/]]></link>
+            <codPool>community</codPool>
+        </Codnitive_SemanticStore>
+    </modules>
+    <global>
+        <blocks>
+            <semanticstore>
+                <class>Codnitive_SemanticStore_Block</class>
+            </semanticstore>
+            <catalog>
+                <rewrite>
+                    <!--<product_abstract>Codnitive_SemanticStore_Block_Catalog_Product_Abstract</product_abstract>-->
+                    <product_view>Codnitive_SemanticStore_Block_Catalog_Product_View</product_view>
+                    <product_view_media>Codnitive_SemanticStore_Block_Catalog_Product_View_Media</product_view_media>
+                    <product_view_description>Codnitive_SemanticStore_Block_Catalog_Product_View_Description</product_view_description>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <helpers>
+            <semanticstore>
+                <class>Codnitive_SemanticStore_Helper</class>
+            </semanticstore>
+        </helpers>
+        <models>
+            <semanticstore>
+                <class>Codnitive_SemanticStore_Model</class>
+            </semanticstore>
+            <directory>
+                <rewrite>
+                    <currency>Codnitive_SemanticStore_Model_Directory_Currency</currency>
+                </rewrite>
+            </directory>
+        </models>
+    </global>
+	
+    <adminhtml>
+        <translate>
+            <modules>
+                <Codnitive_SemanticStore>
+                    <files>
+                        <default>Codnitive_SemanticStore.csv</default>
+                    </files>
+                </Codnitive_SemanticStore>
+            </modules>
+        </translate>
+<!--        <events>
+            <controller_action_predispatch>
+                <observers>
+                    <notification_check>
+                        <type>model</type>
+                        <class>notification/feed_updates</class>
+                        <method>checkExtensionsFeed</method>
+                    </notification_check>					
+                </observers>
+            </controller_action_predispatch>
+        </events>-->
+    </adminhtml>
+    
+    <frontend>
+        <layout>
+            <updates>
+                <semanticstore>
+                    <file>codnitive/semanticstore.xml</file>
+                </semanticstore>
+            </updates>
+        </layout>
+    </frontend>
+	
+    <default>
+        <codnitivesemantic>
+            <semanticstore>
+                <active>0</active>
+                <markup_format>microdata</markup_format>
+                <microdata_adding_mode>standard</microdata_adding_mode>
+                <chkfrq>518400</chkfrq>
+                <frtrn>1</frtrn>
+            </semanticstore>
+            
+            <semanticproduct>
+                <active>1</active>
+                <default_properties>description,image,name,url,aggregateRating,offers,sku,weight</default_properties>
+                <description>both</description>
+                <productid_attribute_add_label>1</productid_attribute_add_label>
+                <product_weight_unitcode>GRM</product_weight_unitcode>
+                <offers_active>1</offers_active>
+                <add_price_currency>1</add_price_currency>
+                <use_store_currency>1</use_store_currency>
+                <currency_factor>0</currency_factor>
+                <add_availibility>1</add_availibility>
+                <rating_active>1</rating_active>
+                <add_rating_count>1</add_rating_count>
+                <add_item_reviewed>1</add_item_reviewed>
+            </semanticproduct>
+        </codnitivesemantic>
+    </default>
+</config>

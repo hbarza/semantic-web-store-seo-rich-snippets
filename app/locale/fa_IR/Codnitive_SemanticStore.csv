@@ -1,0 +1,22 @@
+"%s extension not registered.","اکستنشن %s ثبت نشده است."
+"%s save error. Please try again later.","خطای ذخیره سازی . %s لطفا بعدا دوباره تلاش نمایید."
+" or registration information for"," یا اطلاعات ثبت برای"
+" is not valid. Please check them or %s"," معتبر نیست. لطفا آن‌ها را چک کنید یا %s"
+"contact us.","با ما تماس بگیرید."
+"%s is required.","%s الزامی است."
+"%s is not valid.","%s معتبر نیست."
+"Activation","فعال‌سازی"
+"Serial Number","شماره سریال"
+"Registration Code","کد ثبت"
+"Full Name","نام کامل"
+"Email Address","آدرس ایمیل"
+"Configuration","پیکربندی"
+"Enabled","ممکن‌شده"
+"Yes","بلی"
+"No","خیر"
+"Review(s)","نظر"
+
+SECTION NAME
+EXTENSION NAME
+EXTENSION OPTIONS
+"CODNITIVE SECTION Section","CODNITIVE SECTION Section"

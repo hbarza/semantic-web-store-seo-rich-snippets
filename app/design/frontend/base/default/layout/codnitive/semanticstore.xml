@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_SemanticStore
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+-->
+<layout version="1.0.0">
+
+    <catalog_product_view>
+        <reference name="product.info">
+            <action method="setTemplate" modules="codnitivesemantic/semanticstore/; codnitivesemantic/semanticproduct/" options="active, markup_format, microdata_adding_mode; active" conditions="1, microdata, standard; 1" operation="0 . 1 . 2 . 3">
+                <template>codnitive/semanticstore/catalog/product/view/microdata.phtml</template>
+            </action>
+        </reference>
+        <reference name="product.info.media">
+            <action method="setTemplate" modules="codnitivesemantic/semanticstore/; codnitivesemantic/semanticproduct/" options="active, markup_format, microdata_adding_mode; active" conditions="1, microdata, standard; 1" operation="0 . 1 . 2 . 3">
+                <template>codnitive/semanticstore/catalog/product/view/media/microdata.phtml</template>
+            </action>
+        </reference>
+        <reference name="product.description">
+            <action method="setTemplate" modules="codnitivesemantic/semanticstore/; codnitivesemantic/semanticproduct/" options="active, markup_format, microdata_adding_mode; active" conditions="1, microdata, standard; 1" operation="0 . 1 . 2 . 3">
+                <template>codnitive/semanticstore/catalog/product/view/description/microdata.phtml</template>
+            </action>
+        </reference>
+        <reference name="product.info">
+            <action method="addReviewSummaryTemplate" modules="codnitivesemantic/semanticstore/; codnitivesemantic/semanticproduct/" options="active, markup_format, microdata_adding_mode; active, rating_active" conditions="1, microdata, standard; 1, 1" operation="0 . 1 . 2 . 3 . 4">
+                <type>product-microdata</type>
+                <template>codnitive/semanticstore/review/helper/summary/microdata.phtml</template>
+            </action>
+        </reference>
+        <!--<reference name="catalog_product_price_template">-->
+<!--            <action method="addPriceBlockType"  modules="codnitivesemantic/semanticstore/; codnitivesemantic/semanticproduct/" options="active, markup_format, microdata_adding_mode; active, offers_active" conditions="1, microdata, standard; 1, 1" operation="0 . 1 . 2 . 3 . 4">
+                <type>simple</type>
+                <block>catalog/product_price</block>
+                <template>codnitive/semanticstore/catalog/product/price/microdata.phtml</template>
+            </action>-->
+            <!-- duplicate for each product type you need to handle i.e. change the value of the <type> node" -->
+        <!--</reference>-->
+    </catalog_product_view>
+    
+    <PRODUCT_TYPE_simple>
+        <reference name="product.info.simple">
+            <action method="setTemplate" modules="codnitivesemantic/semanticstore/; codnitivesemantic/semanticproduct/" options="active, markup_format, microdata_adding_mode; active, offers_active" conditions="1, microdata, standard; 1, 1" operation="0 . 1 . 2 . 3 . 4">
+                <template>codnitive/semanticstore/catalog/product/view/type/default/microdata.phtml</template>
+            </action>
+        </reference>
+<!--        <reference name="product.clone_prices">
+            <action method="setTemplate">
+                <template>codnitive/semanticstore/catalog/product/price/microdata.phtml</template>
+            </action>
+        </reference>-->
+    </PRODUCT_TYPE_simple>
+
+</layout>

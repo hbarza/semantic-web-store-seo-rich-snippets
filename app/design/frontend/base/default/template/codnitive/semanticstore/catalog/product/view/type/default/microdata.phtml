@@ -1,0 +1,41 @@
+<?php
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive, Design
+ * @package    Codnitive_SemanticStore
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+?>
+<?php /* @var $this Mage_Catalog_Block_Product_View_Abstract */?>
+<?php 
+    $_product = $this->getProduct();
+    // add by codnitive <<<
+    $_config  = Mage::getModel('semanticstore/config');
+    // add by codnitive >>>
+?>
+
+<?php if ($_product->isAvailable()): ?>
+    <?php /* def: <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('In stock') ?></span></p> */ ?>
+    <p class="availability in-stock"><?php echo $this->__('Availability:') ?> <span><?php if ($_config->addProductAvailibility()): ?><link itemprop="availability" href="http://schema.org/InStock" /><?php endif; ?><?php echo $this->__('In stock') ?></span></p>
+<?php else: ?>
+    <?php /* def: <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php echo $this->__('Out of stock') ?></span></p> */ ?>
+    <p class="availability out-of-stock"><?php echo $this->__('Availability:') ?> <span><?php if ($_config->addProductAvailibility()): ?><link itemprop="availability" href="http://schema.org/OutOfStock" /><?php endif; ?><?php echo $this->__('Out of stock') ?></span></p>
+<?php endif; ?>
+<?php echo $this->getChildHtml('product_type_data_extra') ?>
+<?php echo $this->getPriceHtml($_product) ?>

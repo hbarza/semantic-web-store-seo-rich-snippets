@@ -1,0 +1,39 @@
+<?php
+/**
+ * CODNITIVE
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE_EULA.html.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.codnitive.com/en/terms-of-service-softwares/
+ * http://www.codnitive.com/fa/terms-of-service-softwares/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade to newer
+ * versions in the future.
+ *
+ * @category   Codnitive, Design
+ * @package    Codnitive_SemanticStore
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2012 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://www.codnitive.com/en/terms-of-service-softwares/ End User License Agreement (EULA 1.0)
+ */
+
+/**
+ * Product description template
+ *
+ * @see Codnitive_SemanticStore_Block_Catalog_Product_View_Description
+ * @see Mage_Catalog_Block_Product_View_Description
+ */
+?>
+<?php $_description = $this->getProduct()->getDescription(); ?>
+<?php if ($_description): ?>
+    <h2><?php echo $this->__('Details') ?></h2>
+    <?php //def: <div class="std"> ?>
+    <div <?php if ($this->addDescriptionProp()) echo 'itemprop="description"' ?> class="std">
+        <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_description, 'description') ?>
+    </div>
+<?php endif; ?>
